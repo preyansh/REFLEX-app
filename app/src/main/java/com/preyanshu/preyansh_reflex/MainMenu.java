@@ -1,11 +1,11 @@
 package com.preyanshu.preyansh_reflex;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

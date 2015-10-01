@@ -16,6 +16,7 @@
     <string name="Player_2_button">2</string>
     <string name="Player_3_button">3</string>
     <string name="Player_4_button">4</string>
+    <string name="Single_Player_button_press">Press</string>
 
     <string name="title_activity_buzzer_game2_player">BuzzerGame2Player</string>
     <string name="title_activity_buzzer_game_3player">buzzer_game_3player</string>
@@ -24,4 +25,5 @@
     <string name="title_activity_reaction_game">ReactionGame</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_statistics_menu">StatisticsMenu</string>
 </resources>

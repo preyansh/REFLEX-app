@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/REFLEX-app.iml" filepath="$PROJECT_DIR$/REFLEX-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/preyansh-Reflex.iml" filepath="$PROJECT_DIR$/preyansh-Reflex.iml" />
     </modules>
   </component>
 </project>

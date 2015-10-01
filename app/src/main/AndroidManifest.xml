@@ -68,6 +68,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.preyanshu.preyansh_reflex.MainMenu" />
         </activity>
+        <activity
+            android:name=".StatisticsMenu"
+            android:label="@string/title_activity_statistics_menu"
+            android:parentActivityName=".MainMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.preyanshu.preyansh_reflex.MainMenu" />
+        </activity>
     </application>
 
 </manifest>
