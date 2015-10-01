@@ -24,7 +24,9 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
                 android:id="@+id/textView2"
-                android:textAlignment="gravity" />
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textSize="40dp"/>
 
             <Button
                 android:layout_width="match_parent"
