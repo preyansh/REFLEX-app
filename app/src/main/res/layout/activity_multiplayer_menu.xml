@@ -6,7 +6,8 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.preyanshu.preyansh_reflex.MultiplayerMenu"
     android:weightSum="1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#79ff3c">
 
 
     <TextView
