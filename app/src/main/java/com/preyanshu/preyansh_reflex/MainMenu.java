@@ -1,9 +1,11 @@
 package com.preyanshu.preyansh_reflex;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainMenu extends Activity {
 
@@ -33,5 +35,17 @@ public class MainMenu extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void ReactionTimeButton(View view){
+        Intent ReactionGame=new Intent(this, ReactionGame.class);
+            startActivity(ReactionGame);
+    }
+    public void BuzzerGameButton(View view){
+        Intent BuzzerGame=new Intent(this, MultiplayerMenu.class);
+            startActivity(BuzzerGame);
+    }
+    public void StatisticsButton(View view){
+        Intent Statistics=new Intent(this, StatisticsMenu.class);
+            startActivity(Statistics);
     }
 }

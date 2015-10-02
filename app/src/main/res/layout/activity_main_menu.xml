@@ -25,19 +25,22 @@
         android:layout_height="wrap_content"
         android:text="@string/reaction_time_button"
         android:layout_marginTop="93dp"
-        android:id="@+id/ReactionTimeButton" />
+        android:id="@+id/ReactionTimeButton"
+        android:onClick="ReactionTimeButton" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/buzzer_game_button"
         android:id="@+id/BuzzerGameButton"
-        android:layout_marginTop="53dp" />
+        android:layout_marginTop="53dp"
+        android:onClick="BuzzerGameButton" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/statistics_button"
         android:id="@+id/StatisticsButton"
-        android:layout_marginTop="43dp" />
+        android:layout_marginTop="43dp"
+        android:onClick="StatisticsButton" />
 </LinearLayout>
