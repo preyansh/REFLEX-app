@@ -5,20 +5,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class MultiplayerMenu extends Activity {
+public class BuzzerGame extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multiplayer_menu);
+        Intent intent=getIntent();
+        Integer NumofPlayers = intent.getIntExtra("MPlayerMode", 0);
+
+        if (NumofPlayers==2){
+            setContentView(R.layout.activity_buzzer_game2_player);
+        }
+        if (NumofPlayers==3){
+            setContentView(R.layout.activity_buzzer_game3_player2);
+        }
+        if (NumofPlayers==3){
+            setContentView(R.layout.activity_buzzer_game4_player);
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_multiplayer_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_buzzer_game, menu);
         return true;
     }
 
@@ -35,21 +45,5 @@ public class MultiplayerMenu extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    public void TwoPlayerButton(View view){
-        Intent TwoPlyrBzr=new Intent(this, BuzzerGame.class);
-            TwoPlyrBzr.putExtra("MPlayerMode", 2);
-            startActivity(TwoPlyrBzr);
-    }
-    public void ThreePlayerButton(View view){
-        Intent ThreePlyrBzr=new Intent(this, BuzzerGame.class);
-            ThreePlyrBzr.putExtra("MPlayerMode", 3);
-            startActivity(ThreePlyrBzr);
-
-    }
-    public void FourPlayerButton(View view){
-        Intent FourPlyrBzr=new Intent(this, BuzzerGame.class);
-            FourPlyrBzr.putExtra("MPlayerMode", 4);
-            startActivity(FourPlyrBzr);
     }
 }
