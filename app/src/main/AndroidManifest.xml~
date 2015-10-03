@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.preyanshu.preyansh_reflex" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainMenu"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MultiplayerMenu"
+            android:label="@string/title_activity_multiplayer_menu"
+            android:parentActivityName=".MainMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.preyanshu.preyansh_reflex.MainMenu" />
+        </activity>
+        <activity
+            android:name=".BuzzerGame"
+            android:label="@string/title_activity_buzzer_game"
+            android:parentActivityName=".MultiplayerMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.preyanshu.preyansh_reflex.MultiplayerMenu" />
+        </activity>
+        <activity
+            android:name=".buzzer_game_3player"
+            android:label="@string/title_activity_buzzer_game_3player"
+            android:parentActivityName=".MultiplayerMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.preyanshu.preyansh_reflex.MultiplayerMenu" />
+        </activity>
+        <activity
+            android:name=".ReactionGame"
+            android:label="@string/title_activity_reaction_game"
+            android:parentActivityName=".MainMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.preyanshu.preyansh_reflex.MainMenu" />
+        </activity>
+        <activity
+            android:name=".StatisticsMenu"
+            android:label="@string/title_activity_statistics_menu"
+            android:parentActivityName=".MainMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.preyanshu.preyansh_reflex.MainMenu" />
+        </activity>
+<<<<<<< HEAD
+=======
+        <activity
+            android:name=".MultiplayerGame"
+            android:label="@string/title_activity_multiplayer_game"
+            android:parentActivityName=".MultiplayerMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.preyanshu.preyansh_reflex.MultiplayerMenu" />
+        </activity>
+        <activity
+            android:name=".Dialogue_box_creator"
+            android:label="@string/title_activity_dialogue_box_creator" >
+        </activity>
+>>>>>>> 6a3723ca425bfda620d8cf189afeb40763c8e138
+    </application>
+
+</manifest>

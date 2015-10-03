@@ -7,18 +7,34 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainMenu extends Activity {
+public class BuzzerGame extends Activity {
+
+    int player1press=0;
+    int player2press=0;
+    int player3press=0;
+    int player4press=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+        Intent intent=getIntent();
+        Integer NumofPlayers = intent.getIntExtra("MPlayerMode", 0);
+        //changes to the xml you want depending on the number of players
+        if (NumofPlayers==2){
+            setContentView(R.layout.activity_buzzer_game2_player);
+        }
+        if (NumofPlayers==3){
+            setContentView(R.layout.activity_buzzer_game3_player2);
+        }
+        if (NumofPlayers==3){
+            setContentView(R.layout.activity_buzzer_game4_player);
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_buzzer_game, menu);
         return true;
     }
 
@@ -36,16 +52,15 @@ public class MainMenu extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void ReactionTimeButton(View view){
-        Intent ReactionGame=new Intent(this, ReactionGame.class);
-            startActivity(ReactionGame);
+    public void Player1Button(View view) {
+        player1press++;
+
     }
-    public void BuzzerGameButton(View view){
-        Intent BuzzerGame=new Intent(this, MultiplayerMenu.class);
-            startActivity(BuzzerGame);
+    public void Player2Button(View view) {  player2press++;}
+    public void Player3Button(View view) {
+        player3press++;
     }
-    public void StatisticsButton(View view){
-        Intent Statistics=new Intent(this, StatisticsMenu.class);
-            startActivity(Statistics);
+    public void Player4Button(View view) {
+        player4press++;
     }
 }

@@ -4,7 +4,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.preyanshu.preyansh_reflex.BuzzerGame2Player">
+    tools:context="com.preyanshu.preyansh_reflex.BuzzerGame2Player"
+    android:background="#79ff3c">
 
 
     <Button
@@ -16,7 +17,8 @@
         android:clickable="true"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/Player2Button"
-        android:layout_alignStart="@+id/Player2Button" />
+        android:layout_alignStart="@+id/Player2Button"
+        android:background="#0003ff" />
 
     <Button
         android:layout_width="wrap_content"
@@ -26,6 +28,7 @@
         android:clickable="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="124dp" />
+        android:layout_marginBottom="124dp"
+        android:background="#ff0007" />
 
 </RelativeLayout>

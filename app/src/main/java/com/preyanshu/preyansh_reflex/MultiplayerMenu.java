@@ -1,9 +1,11 @@
 package com.preyanshu.preyansh_reflex;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MultiplayerMenu extends Activity {
 
@@ -33,5 +35,21 @@ public class MultiplayerMenu extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void TwoPlayerButton(View view){
+        Intent TwoPlyrBzr=new Intent(this, BuzzerGame.class);
+            TwoPlyrBzr.putExtra("MPlayerMode", 2);
+            startActivity(TwoPlyrBzr);
+    }
+    public void ThreePlayerButton(View view){
+        Intent ThreePlyrBzr=new Intent(this, BuzzerGame.class);
+            ThreePlyrBzr.putExtra("MPlayerMode", 3);
+            startActivity(ThreePlyrBzr);
+
+    }
+    public void FourPlayerButton(View view){
+        Intent FourPlyrBzr=new Intent(this, BuzzerGame.class);
+            FourPlyrBzr.putExtra("MPlayerMode", 4);
+            startActivity(FourPlyrBzr);
     }
 }
