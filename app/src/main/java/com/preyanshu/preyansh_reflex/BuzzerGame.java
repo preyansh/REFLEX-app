@@ -56,9 +56,7 @@ public class BuzzerGame extends Activity {
         player1press++;
 
     }
-    public void Player2Button(View view) {
-        player2press++;
-    }
+    public void Player2Button(View view) {  player2press++;}
     public void Player3Button(View view) {
         player3press++;
     }

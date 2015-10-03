@@ -36,4 +36,7 @@
     <string name="title_activity_multiplayer_game">MultiplayerGame</string>
     <string name="title_activity_reaction_game_results">ReactionGameResults</string>
     <string name="title_activity_popup_before_game">PopupBeforeGame</string>
+    <string name="title_activity_dialogue_box_creator">Dialogue_box_creator</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

@@ -64,6 +64,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.preyanshu.preyansh_reflex.MultiplayerMenu" />
         </activity>
+        <activity
+            android:name=".Dialogue_box_creator"
+            android:label="@string/title_activity_dialogue_box_creator" >
+        </activity>
     </application>
 
 </manifest>
