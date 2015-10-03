@@ -9,15 +9,19 @@ import android.view.MenuItem;
 
 public class ReactionGame extends Activity {
 
-    String WelcomeTitle=getString(R.string.reaction_time_button);
-    String WelcomeMsg=getString(R.string.Popup_menu_Reaction_game);
-    String Choice=getString(R.string.Play_button);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String WelcomeTitle=getResources().getString(R.string.reaction_time_button);
+        String WelcomeMsg=getResources().getString(R.string.Popup_menu_Reaction_game);
+        String ChoiceGo=getResources().getString(R.string.Play_button);
+        String ChoiceStop=getResources().getString(R.string.Quit_Button);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_game);
-        DialogueBoxCreator welcome_box = new DialogueBoxCreator(WelcomeTitle,WelcomeMsg, Choice);
-
+        DialogueBoxCreator welcome_box = new DialogueBoxCreator();
+        //welcome_box.getStuff(WelcomeTitle,  WelcomeMsg, ChoiceGo,ChoiceStop);
+        welcome_box.getStuff("hi","work","now","please");
         welcome_box.show(getFragmentManager(), "welcomeBoxTag");
     }
         @Override

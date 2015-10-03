@@ -10,15 +10,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class DialogueBoxCreator extends DialogFragment {
-    String title;
-    String message;
-    String positiveButton;
+    private String title;
+    private String message;
+    private String positiveButton;
+    private String negativeButton;
 
 
-    public DialogueBoxCreator(String title, String message, String positiveButton) {
+    public DialogueBoxCreator() {
+    }
+
+    public void getStuff(String title, String message, String positiveButton, String negativeButton) {
         this.title = title;
         this.message = message;
         this.positiveButton = positiveButton;
+        this.negativeButton= negativeButton;
     }
 
 
@@ -26,21 +31,19 @@ public class DialogueBoxCreator extends DialogFragment {
         // Use the Builder class for convenient dialog construction
         //all needs to be referenced
         AlertDialog.Builder PlayGamepopup = new AlertDialog.Builder(getActivity());
-        PlayGamepopup.setTitle(title);
-        PlayGamepopup.setMessage(message);
-        PlayGamepopup.setPositiveButton(positiveButton, new DialogInterface.OnClickListener() {
+        PlayGamepopup.setTitle(title).setMessage(message).setPositiveButton(positiveButton, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // if this button is clicked, close
                 // current activity
             }
-        });
-        /*PlayGamepopup.setNegativeButton(negativeButton, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog.int id) {
+        }).setNegativeButton(negativeButton, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int id) {
                         // if this button is clicked, just close
                         // the dialog box and do nothing
                         dialog.cancel();
                     }
-        });*/
+        });
         PlayGamepopup.setCancelable(false);
         return PlayGamepopup.create();
     }

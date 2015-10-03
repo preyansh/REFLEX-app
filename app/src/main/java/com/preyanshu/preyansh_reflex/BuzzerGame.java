@@ -52,15 +52,12 @@ public class BuzzerGame extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void Player1Button(View view) {
-        player1press++;
-
-    }
+    public void Player1Button(View view) {  player1press++;}
     public void Player2Button(View view) {  player2press++;}
     public void Player3Button(View view) {
-        player3press++;
+         player3press++;
     }
     public void Player4Button(View view) {
-        player4press++;
+         player4press++;
     }
 }
