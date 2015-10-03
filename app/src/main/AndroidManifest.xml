@@ -56,22 +56,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.preyanshu.preyansh_reflex.MainMenu" />
         </activity>
-        <activity
-            android:name=".MultiplayerGame"
-            android:label="@string/title_activity_multiplayer_game"
-            android:parentActivityName=".MultiplayerMenu" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.preyanshu.preyansh_reflex.MultiplayerMenu" />
-        </activity>
-        <activity
-            android:name=".ReactionGameResults"
-            android:label="@string/title_activity_reaction_game_results"
-            android:parentActivityName=".ReactionGame" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.preyanshu.preyansh_reflex.ReactionGame" />
-        </activity>
     </application>
 
 </manifest>
