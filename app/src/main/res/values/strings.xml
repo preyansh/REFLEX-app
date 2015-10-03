@@ -2,7 +2,7 @@
     <string name="app_name">preyansh-Reflex</string>
 
     <string name="app_name_menu">REFLEX</string>
-    <string name="reaction_time_button">REACTION TIME</string>
+    <string name="reaction_time_button">REACTION GAME</string>
     <string name="buzzer_game_button">BUZZER GAME</string>
     <string name="statistics_button">STATISTICS</string>
     <string name="action_settings">Settings</string>
@@ -22,6 +22,9 @@
     <string name="Email_stats_button">E-mail Statistics</string>
     <string name="Clear_stats_button">Clear Statistics</string>
     <string name="Results_reaction">Your Reaction Time is</string>
+    <string name="Popup_menu_Reaction_game">Welcome to Reaction Game, After you Press Play, the Game will begin, you will be prompeted randomely to press the button, Press it as fast as you can! Are you ready? </string>
+    <string name="Play_button">Play</string>
+    <string name="Quit_button">Main Menu</string>
 
     <string name="title_activity_buzzer_game2_player">BuzzerGame2Player</string>
     <string name="title_activity_buzzer_game_3player">buzzer_game_3player</string>
@@ -29,7 +32,6 @@
     <string name="title_activity_buzzer_game4_player">BuzzerGame4Player</string>
     <string name="title_activity_reaction_game">ReactionGame</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_statistics_menu">StatisticsMenu</string>
     <string name="title_activity_multiplayer_game">MultiplayerGame</string>
     <string name="title_activity_reaction_game_results">ReactionGameResults</string>

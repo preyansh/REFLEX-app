@@ -5,15 +5,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class BuzzerGame extends Activity {
+
+    int player1press=0;
+    int player2press=0;
+    int player3press=0;
+    int player4press=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent=getIntent();
         Integer NumofPlayers = intent.getIntExtra("MPlayerMode", 0);
-
+        //changes to the xml you want depending on the number of players
         if (NumofPlayers==2){
             setContentView(R.layout.activity_buzzer_game2_player);
         }
@@ -45,5 +51,18 @@ public class BuzzerGame extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void Player1Button(View view) {
+        player1press++;
+
+    }
+    public void Player2Button(View view) {
+        player2press++;
+    }
+    public void Player3Button(View view) {
+        player3press++;
+    }
+    public void Player4Button(View view) {
+        player4press++;
     }
 }

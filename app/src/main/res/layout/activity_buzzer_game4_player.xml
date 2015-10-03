@@ -15,7 +15,8 @@
         android:layout_marginTop="46dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="#1618ff" />
+        android:background="#1618ff"
+        android:onClick="Player1Button" />
 
     <Button
         android:layout_width="wrap_content"
@@ -25,7 +26,8 @@
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#ff0200" />
+        android:background="#ff0200"
+        android:onClick="Player2Button" />
 
     <Button
         android:layout_width="wrap_content"
@@ -35,7 +37,8 @@
         android:layout_alignBottom="@+id/Player2Button"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="#feff00" />
+        android:background="#feff00"
+        android:onClick="Player3Button" />
 
     <Button
         android:layout_width="wrap_content"
@@ -46,5 +49,6 @@
         android:layout_alignLeft="@+id/Player1Button"
         android:layout_alignStart="@+id/Player1Button"
         android:layout_marginBottom="46dp"
-        android:background="#ff00f6" />
+        android:background="#ff00f6"
+        android:onClick="Player4Button" />
 </RelativeLayout>
