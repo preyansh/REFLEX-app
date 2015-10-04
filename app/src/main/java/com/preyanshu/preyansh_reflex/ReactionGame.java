@@ -3,6 +3,7 @@ package com.preyanshu.preyansh_reflex;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+//import android.content.DialogFragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,14 +17,19 @@ public class ReactionGame extends Activity {
         String WelcomeMsg=getResources().getString(R.string.Popup_menu_Reaction_game);
         String ChoiceGo=getResources().getString(R.string.Play_button);
         String ChoiceStop=getResources().getString(R.string.Quit_Button);
+        //Activity dialogue_activity= new Activity();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_game);
+
         DialogueBoxCreator welcome_box = new DialogueBoxCreator();
-        //welcome_box.getStuff(WelcomeTitle,  WelcomeMsg, ChoiceGo,ChoiceStop);
-        welcome_box.getStuff("hi","work","now","please");
-        welcome_box.show(getFragmentManager(), "welcomeBoxTag");
+        welcome_box.getStuff(WelcomeTitle, WelcomeMsg, ChoiceGo, ChoiceStop);
+        welcome_box.show(getFragmentManager(), "welcome_box");
+        //welcome_box.onCreateDialogue(WelcomeMsg);
+
     }
+
+
         @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
