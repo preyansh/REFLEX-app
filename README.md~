@@ -1,4 +1,4 @@
-# REFLEX-app
+# preyansh-REFLEX
 Video Demonstration available in repro under "preyansh-VideoDemo.mp4"
 
 Attribution:
@@ -25,7 +25,16 @@ Attribution:
 	Myokong:
 	http://www.mkyong.com/android/android-alert-dialog-example/
 	Author: Myokong http://www.mkyong.com/author/mkyong/
-	
+
+	Saga of Student Picker:
+	https://www.youtube.com/watch?v=5PPD0ncJU1g&feature=youtu.be
+	https://www.youtube.com/watch?v=VKVYUXNuDDg
+	https://www.youtube.com/watch?v=k9ZNbsc0Qgo
+	https://www.youtube.com/watch?v=fxjIA4HIruU
+	https://www.youtube.com/watch?v=uLnoI7mbuEo
+	https://www.youtube.com/watch?v=7zKCuqScaRE
+	https://www.youtube.com/watch?v=gmNfc6u1qk0
+
 	U of A Computer Science Labs for Gson documentation
 
 	Collaborated with:
