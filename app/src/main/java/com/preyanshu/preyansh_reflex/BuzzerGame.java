@@ -6,11 +6,21 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
 import java.security.PublicKey;
+import java.util.ArrayList;
 
 public class BuzzerGame extends Activity {
 
@@ -28,6 +38,10 @@ public class BuzzerGame extends Activity {
     int player4press4player = 0;
 
     Integer NumofPlayers;
+    private static final String FILENAME = "file.sav";
+    private ArrayList<Long> multiplayer_scores;
+    private ArrayAdapter<Long> adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,28 +49,31 @@ public class BuzzerGame extends Activity {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         //dialog box shit
-        final String Title=getResources().getString(R.string.Win);
-        final String P1Win=getResources().getString(R.string.Player_1_Press);
-        final String P2Win=getResources().getString(R.string.Player_2_Press);
-        final String P3Win=getResources().getString(R.string.Player_3_Press);
-        final String P4Win=getResources().getString(R.string.Player_4_Press);
-        final String ChoicePlayAgain=getResources().getString(R.string.Play_Again_Button);
-        final String ChoiceQuit=getResources().getString(R.string.Quit_Button);
+        final String Title = getResources().getString(R.string.Win);
+        final String P1Win = getResources().getString(R.string.Player_1_Press);
+        final String P2Win = getResources().getString(R.string.Player_2_Press);
+        final String P3Win = getResources().getString(R.string.Player_3_Press);
+        final String P4Win = getResources().getString(R.string.Player_4_Press);
+        final String ChoicePlayAgain = getResources().getString(R.string.Play_Again_Button);
+        final String ChoiceQuit = getResources().getString(R.string.Quit_Button);
 
         NumofPlayers = intent.getIntExtra("MPlayerMode", 0);
         //changes to the xml you want depending on the number of players
 
         if (NumofPlayers == 2) {
             setContentView(R.layout.activity_buzzer_game2_player);
+            loadFromFile();
             //2 player buttons
             //Player one buttons across all modes
-            Button P1Press=(Button) findViewById(R.id.Player1Button);
+            Button P1Press = (Button) findViewById(R.id.Player1Button);
             P1Press.setOnClickListener(new View.OnClickListener() {
 
-                public void onClick (View view) {
+                public void onClick(View view) {
 
                     //choosing between where to add depending on the game
                     player1press2player++;
+                    saveInFile();
+
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
@@ -65,13 +82,14 @@ public class BuzzerGame extends Activity {
                 }
             });
             //Player 2 Button
-            Button P2Press=(Button) findViewById(R.id.Player2Button);
+            Button P2Press = (Button) findViewById(R.id.Player2Button);
             P2Press.setOnClickListener(new View.OnClickListener() {
 
-                public void onClick(View view) {
+                public void onClick(View view){
 
                     //choosing between where to add depending on the game
                     player2press2player++;
+                    saveInFile();
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
                     Plyr1Win.getStuff(Title, P2Win, ChoicePlayAgain, ChoiceQuit);
@@ -84,8 +102,9 @@ public class BuzzerGame extends Activity {
         if (NumofPlayers == 3) {
             //3 player implementation
             setContentView(R.layout.activity_buzzer_game3_player2);
+            loadFromFile();
             //player1buttons for 3 player
-            Button P1Press = (Button)findViewById(R.id.player1button);
+            Button P1Press = (Button) findViewById(R.id.player1button);
 
             P1Press.setOnClickListener(new View.OnClickListener() {
 
@@ -94,6 +113,7 @@ public class BuzzerGame extends Activity {
                     //choosing between where to add depending on the game
 
                     player1press3player++;
+                    saveInFile();
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
@@ -108,6 +128,7 @@ public class BuzzerGame extends Activity {
                 public void onClick(View view) {
 
                     player2press3player++;
+                    saveInFile();
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
@@ -134,73 +155,105 @@ public class BuzzerGame extends Activity {
 
         }
         if (NumofPlayers == 4) {
-                setContentView(R.layout.activity_buzzer_game4_player);
+            setContentView(R.layout.activity_buzzer_game4_player);
 
-                // 4 player implementation
-                //Player one buttons across all modes
-                Button P1Press = (Button) findViewById(R.id.Player1Button);
-                P1Press.setOnClickListener(new View.OnClickListener() {
+            // 4 player implementation
+            //Player one buttons across all modes
+            Button P1Press = (Button) findViewById(R.id.Player1Button);
+            P1Press.setOnClickListener(new View.OnClickListener() {
 
-                    public void onClick(View view) {
+                public void onClick(View view) {
 
-                        //choosing between where to add depending on the game
+                    //choosing between where to add depending on the game
 
-                        player1press4player++;
+                    player1press4player++;
 
-                        //Dialogue box to show if the first player touched first
-                        DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
-                        Plyr1Win.getStuff(Title, P1Win, ChoicePlayAgain, ChoiceQuit);
-                        Plyr1Win.show(getFragmentManager(), "Plyr1Wins");
-                    }
-                });
-                //Player 2 Button
-                Button P2Press = (Button) findViewById(R.id.Player2Button);
-                P2Press.setOnClickListener(new View.OnClickListener() {
+                    //Dialogue box to show if the first player touched first
+                    DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
+                    Plyr1Win.getStuff(Title, P1Win, ChoicePlayAgain, ChoiceQuit);
+                    Plyr1Win.show(getFragmentManager(), "Plyr1Wins");
+                }
+            });
+            //Player 2 Button
+            Button P2Press = (Button) findViewById(R.id.Player2Button);
+            P2Press.setOnClickListener(new View.OnClickListener() {
 
-                    public void onClick(View view) {
-
-
-                        player2press4player++;
-
-                        //Dialogue box to show if the first player touched first
-                        DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
-                        Plyr1Win.getStuff(Title, P2Win, ChoicePlayAgain, ChoiceQuit);
-                        Plyr1Win.show(getFragmentManager(), "Plyr1Wins");
-                    }
-                });
-                //Player 3 Implementations Across 3 and 4 player
-                Button P3Press = (Button) findViewById(R.id.Player3Button);
-                P3Press.setOnClickListener(new View.OnClickListener() {
-
-                    public void onClick(View view) {
+                public void onClick(View view) {
 
 
-                        player3press4player++;
+                    player2press4player++;
 
-                        //Dialogue box to show if the first player touched first
-                        DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
-                        Plyr1Win.getStuff(Title, P3Win, ChoicePlayAgain, ChoiceQuit);
-                        Plyr1Win.show(getFragmentManager(), "Plyr1Wins");
-                    }
-                });
+                    //Dialogue box to show if the first player touched first
+                    DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
+                    Plyr1Win.getStuff(Title, P2Win, ChoicePlayAgain, ChoiceQuit);
+                    Plyr1Win.show(getFragmentManager(), "Plyr1Wins");
+                }
+            });
+            //Player 3 Implementations Across 3 and 4 player
+            Button P3Press = (Button) findViewById(R.id.Player3Button);
+            P3Press.setOnClickListener(new View.OnClickListener() {
 
-                //Player4 Implementation in 4 player mode
-                Button P4Press = (Button) findViewById(R.id.Player4Button);
-                P4Press.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
 
-                    public void onClick(View view) {
 
-                        //choosing between where to add depending on the game
-                        player4press4player++;
+                    player3press4player++;
 
-                        //Dialogue box to show if the first player touched first
-                        DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
-                        Plyr1Win.getStuff(Title, P4Win, ChoicePlayAgain, ChoiceQuit);
-                        Plyr1Win.show(getFragmentManager(), "Plyr1Wins");
-                    }
-                });
-            }
+                    //Dialogue box to show if the first player touched first
+                    DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
+                    Plyr1Win.getStuff(Title, P3Win, ChoicePlayAgain, ChoiceQuit);
+                    Plyr1Win.show(getFragmentManager(), "Plyr1Wins");
+                }
+            });
+
+            //Player4 Implementation in 4 player mode
+            Button P4Press = (Button) findViewById(R.id.Player4Button);
+            P4Press.setOnClickListener(new View.OnClickListener() {
+
+                public void onClick(View view) {
+
+                    //choosing between where to add depending on the game
+                    player4press4player++;
+
+                    //Dialogue box to show if the first player touched first
+                    DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
+                    Plyr1Win.getStuff(Title, P4Win, ChoicePlayAgain, ChoiceQuit);
+                    Plyr1Win.show(getFragmentManager(), "Plyr1Wins");
+                }
+            });
         }
+    }
+
+    private void loadFromFile() {
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            //following line based on https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html 2015-10-5
+            Type listType = new TypeToken<ArrayList<Long>>() {
+            }.getType();
+            multiplayer_scores = gson.fromJson(in, listType);
+        } catch (FileNotFoundException e) {
+            multiplayer_scores = new ArrayList<Long>();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void saveInFile() {
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME, 0);
+            OutputStreamWriter writer = new OutputStreamWriter(fos);
+            Gson gson = new Gson();
+            gson.toJson(multiplayer_scores, writer);
+            writer.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 
     @Override
