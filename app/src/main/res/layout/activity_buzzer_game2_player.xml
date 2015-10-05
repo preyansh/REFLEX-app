@@ -18,8 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/Player2Button"
         android:layout_alignStart="@+id/Player2Button"
-        android:background="#0003ff"
-        android:onClick="Player1Button" />
+        android:background="#0003ff" />
 
     <Button
         android:layout_width="wrap_content"
@@ -30,8 +29,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="124dp"
-        android:background="#ff0007"
-        android:onClick="Player2Button"
-        android:nestedScrollingEnabled="false" />
+        android:background="#ff0007" />
 
 </RelativeLayout>

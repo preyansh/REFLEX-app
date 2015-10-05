@@ -32,14 +32,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.preyanshu.preyansh_reflex.MultiplayerMenu" />
         </activity>
-        <activity
-            android:name=".buzzer_game_3player"
-            android:label="@string/title_activity_buzzer_game_3player"
-            android:parentActivityName=".MultiplayerMenu" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.preyanshu.preyansh_reflex.MultiplayerMenu" />
-        </activity>
+
         <activity
             android:name=".ReactionGame"
             android:label="@string/title_activity_reaction_game"
