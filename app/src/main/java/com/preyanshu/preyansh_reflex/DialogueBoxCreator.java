@@ -47,7 +47,7 @@ public class DialogueBoxCreator extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle b) {
         // Use the Builder class for convenient dialog construction
-        //all needs to be referenced
+        //code referenced from http://www.mkyong.com/android/android-alert-dialog-example/
         AlertDialog.Builder PlayGamepopup = new AlertDialog.Builder(getActivity());
         PlayGamepopup.setCancelable(false);
         PlayGamepopup.setTitle(title);
