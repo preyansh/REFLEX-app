@@ -58,10 +58,10 @@ public class ReactionGame extends Activity {
         final DialogueBoxCreator too_quick = new DialogueBoxCreator();
         too_quick.getStuff(TooFast, TooFastMsg, GotIt, ChoiceStop);
 
-        Integer minimum = 10;
-        Integer maximum = 2000;
+        Integer minimum = 80;
+        Integer maximum = 4000;
         Random number = new Random();
-        Integer waitBeforeClick = number.nextInt(maximum + 1);
+        Integer waitBeforeClick = number.nextInt((maximum -minimum+ 1)+minimum);
 
         final Button button_press = (Button) findViewById(R.id.reactionbutton);
 
@@ -75,29 +75,32 @@ public class ReactionGame extends Activity {
                 super(timeComing, countDownInterval);
             }
 
-            //gives us our time remaining
-            public long getTimeRemaining() {
-                return timeRemaining;
-            }
-
             //counts our time elapsed
             public long getTimedone() {
                 return currentThreadTimeMillis() - timeStart;
             }
 
+            //gives us our time remaining
+            public long getTimeRemaining() {
+
+                return timeRemaining;
+            }
+
             //must override the prebuilt classes of ReactionTimer
             @Override
             public void onTick(long timeLeft) {
+
                 timeRemaining = timeLeft;
             }
 
             @Override
             public void onFinish() {
-                button_press.setBackgroundColor(Color.parseColor("FFFF041B"));
+                button_press.setBackgroundColor(Color.parseColor("#ff1714"));
+                timeRemaining=0;
             }
         }
         //create a new instance, called waiting to be a new timed button, this is our random before we have to click
-        final TimedButton waiting = new TimedButton(waitBeforeClick, 1000);
+        final TimedButton waiting = new TimedButton(waitBeforeClick, 2000);
         waiting.start();
 
         button_press.setOnClickListener(new View.OnClickListener() {

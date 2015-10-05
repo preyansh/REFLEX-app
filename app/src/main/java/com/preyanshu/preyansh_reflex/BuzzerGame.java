@@ -85,7 +85,7 @@ public class BuzzerGame extends Activity {
                     //choosing between where to add depending on the game
                     player1press2player++;
                     saveInFile();
-                    adapter.notifyDataSetChanged();
+                    //adapter.notifyDataSetChanged();
 
 
 
@@ -104,7 +104,7 @@ public class BuzzerGame extends Activity {
                     //choosing between where to add depending on the game
                     player2press2player++;
                     saveInFile();
-                    adapter.notifyDataSetChanged();
+                    //adapter.notifyDataSetChanged();
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
                     Plyr1Win.getStuff(Title, P2Win, ChoicePlayAgain, ChoiceQuit);
@@ -129,7 +129,7 @@ public class BuzzerGame extends Activity {
 
                     player1press3player++;
                     saveInFile();
-                    adapter.notifyDataSetChanged();
+                    //adapter.notifyDataSetChanged();
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
@@ -145,7 +145,7 @@ public class BuzzerGame extends Activity {
 
                     player2press3player++;
                     saveInFile();
-                    adapter.notifyDataSetChanged();
+                    //adapter.notifyDataSetChanged();
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
@@ -162,7 +162,7 @@ public class BuzzerGame extends Activity {
                     //choosing between where to add depending on the game
                     player3press3player++;
                     saveInFile();
-                    adapter.notifyDataSetChanged();
+                    //adapter.notifyDataSetChanged();
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
@@ -187,7 +187,7 @@ public class BuzzerGame extends Activity {
 
                     player1press4player++;
                     saveInFile();
-                    adapter.notifyDataSetChanged();
+                    //adapter.notifyDataSetChanged();
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
@@ -204,7 +204,7 @@ public class BuzzerGame extends Activity {
 
                     player2press4player++;
                     saveInFile();
-                    adapter.notifyDataSetChanged();
+                    //adapter.notifyDataSetChanged();
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
@@ -221,7 +221,7 @@ public class BuzzerGame extends Activity {
 
                     player3press4player++;
                     saveInFile();
-                    adapter.notifyDataSetChanged();
+                    //adapter.notifyDataSetChanged();
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
@@ -239,7 +239,7 @@ public class BuzzerGame extends Activity {
                     //choosing between where to add depending on the game
                     player4press4player++;
                     saveInFile();
-                    adapter.notifyDataSetChanged();
+                    //adapter.notifyDataSetChanged();
 
                     //Dialogue box to show if the first player touched first
                     DialogueBoxCreator Plyr1Win = new DialogueBoxCreator();
